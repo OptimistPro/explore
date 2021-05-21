@@ -29,6 +29,23 @@
                         "endColumns": "115,103,112,86,101,121,82,79,93,95,96,95,102,95,97,95,93,93,82,108,107,99,109,104,105,175,100,83",
                         "endOffsets": "216,320,433,520,622,744,827,907,1001,1097,1194,1290,1393,1489,1587,1683,1777,1871,1954,2063,2171,2271,2381,2486,2592,2768,2869,2953"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Александр\\.gradle\\caches\\transforms-2\\files-2.1\\fdd42d596c4f70d37e38036f9f6b5091\\wear-1.0.0\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,115",
+                        "endOffsets": "162,278"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "3059,3171",
+                        "endColumns": "111,115",
+                        "endOffsets": "3166,3282"
+                    }
                 }
             ]
         }

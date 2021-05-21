@@ -29,6 +29,23 @@
                         "endColumns": "100",
                         "endOffsets": "3033"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Александр\\.gradle\\caches\\transforms-2\\files-2.1\\fdd42d596c4f70d37e38036f9f6b5091\\wear-1.0.0\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,114",
+                        "endOffsets": "158,273"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "3038,3146",
+                        "endColumns": "107,114",
+                        "endOffsets": "3141,3256"
+                    }
                 }
             ]
         }

@@ -1,55 +1,119 @@
 [
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_time_layout.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_time_layout.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_xml_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_xml_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_apk_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_apk_buttom.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_clock.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\clock.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_forder_buttom.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\forder_buttom.png"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_1.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_1.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_8.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_8.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_kist_pressed.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\kist_pressed.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_video_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\video_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_3.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_3.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_forder.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\forder.png"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_forder_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\forder_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_7.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_7.png"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_sech.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\sech.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_5.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_5.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_spisok.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\spisok.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_clock_pressed.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\clock_pressed.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_kist.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\kist.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_pdf_file.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\pdf_file.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_2.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_2.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ppt_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\ppt_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_xslx_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\xslx_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_zip_file.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\zip_file.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_line_menu.png.flat",
@@ -64,28 +128,48 @@
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_tets_images.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\tets_images.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_docx_file.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\docx_file.png"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_muzik_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\muzik_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_6.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_6.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forder_element.xml.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_forder_element.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_4.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_4.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_txt_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_txt_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\xml\\provider_paths.xml"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -94,5 +178,13 @@
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forder_manager.xml.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_forder_manager.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_forder_pressed.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\forder_pressed.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     }
 ]

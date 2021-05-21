@@ -29,6 +29,23 @@
                         "endColumns": "203",
                         "endOffsets": "5913"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Александр\\.gradle\\caches\\transforms-2\\files-2.1\\fdd42d596c4f70d37e38036f9f6b5091\\wear-1.0.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,264",
+                        "endColumns": "208,218",
+                        "endOffsets": "259,478"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "5918,6127",
+                        "endColumns": "208,218",
+                        "endOffsets": "6122,6341"
+                    }
                 }
             ]
         }

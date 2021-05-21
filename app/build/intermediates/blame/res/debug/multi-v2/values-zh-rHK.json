@@ -29,6 +29,23 @@
                         "endColumns": "94,92,99,81,96,107,76,74,91,93,90,95,94,93,95,91,91,91,77,95,94,94,96,95,97,150,93,78",
                         "endOffsets": "195,288,388,470,567,675,752,827,919,1013,1104,1200,1295,1389,1485,1577,1669,1761,1839,1935,2030,2125,2222,2318,2416,2567,2661,2740"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Александр\\.gradle\\caches\\transforms-2\\files-2.1\\fdd42d596c4f70d37e38036f9f6b5091\\wear-1.0.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,156",
+                        "endColumns": "100,102",
+                        "endOffsets": "151,254"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "2846,2947",
+                        "endColumns": "100,102",
+                        "endOffsets": "2942,3045"
+                    }
                 }
             ]
         }

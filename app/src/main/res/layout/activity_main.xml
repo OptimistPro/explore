@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/liner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#C8D6EB"
@@ -68,19 +69,19 @@
             android:background="#F8F8F8">
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/time_buttom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+                app:layout_constraintEnd_toStartOf="@+id/forder_buttom"
                 app:layout_constraintHorizontal_bias="0.592"
                 app:layout_constraintStart_toEndOf="@+id/imageButton5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clock" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/forder_buttom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
@@ -88,7 +89,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/forder" />
+                app:srcCompat="@drawable/forder_pressed" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
@@ -102,11 +103,10 @@
                 app:srcCompat="@drawable/kist" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <fragment
-            android:id="@+id/fragment"
-            android:name="com.startgames.exploler.forder_manager"
+        <FrameLayout
+            android:id="@+id/block_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
