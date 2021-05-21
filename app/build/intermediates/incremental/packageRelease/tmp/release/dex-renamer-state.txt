@@ -1,0 +1,4 @@
+#Tue May 18 15:50:51 MSK 2021
+base.0=C\:\\games\\project\\exploler\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
