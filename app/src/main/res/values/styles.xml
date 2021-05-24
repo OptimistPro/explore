@@ -9,5 +9,8 @@
         <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+    <style name="buttom">
+        <item name="android:background">@drawable/buttom_analiz</item>
+    </style>
 
 </resources>

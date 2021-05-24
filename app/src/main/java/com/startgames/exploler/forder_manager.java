@@ -16,10 +16,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Environment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -92,6 +94,11 @@ public class forder_manager extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             path=mParam1;
         }
+
+
+
+        ((Global) getActivity().getApplication()).vse_clear();
+
         TextView t = view.findViewById(R.id.textView2);
         String path_name = path;
         path_name=path_name.replace("/storage/emulated/0","Внутренний общий накопитель");
@@ -101,6 +108,7 @@ public class forder_manager extends Fragment {
         File directory = new File(path);
         File[] files = directory.listFiles();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
+        boolean prov = true;
         if (files!=null) {
             int j = 0;
             for (int i = 0; i < files.length; i++) {
@@ -109,6 +117,8 @@ public class forder_manager extends Fragment {
                     if (files[i].getName().indexOf('.')<=0){
                         forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
                         ft.add(R.id.forder, catFragment);
+                        prov=false;
+                        ((Global) getActivity().getApplication()).vse_forder_g(catFragment);
                     }
                 }
             }
@@ -118,10 +128,15 @@ public class forder_manager extends Fragment {
                     if (files[i].getName().indexOf('.')>0){
                         forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
                         ft.add(R.id.forder, catFragment);
+                        prov=false;
+                        ((Global) getActivity().getApplication()).vse_forder_g(catFragment);
                     }
                 }
             }
-         }
+         }if(prov){
+            ErrolForder catFragment = ErrolForder.newInstance("","");
+            ft.add(R.id.liner_l, catFragment);
+        }
         ft.commit();
 
 
@@ -133,6 +148,9 @@ public class forder_manager extends Fragment {
         MainActivity ma = (MainActivity) getActivity();
         ma.path_back_new(path_info);
 
+        GridLayout gridLayout =(GridLayout) view.findViewById(R.id.forder);
+        gridLayout.setColumnCount(ma.size_windos());
+
         TextView button1 = t;
         View.OnTouchListener st = new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event)
@@ -142,9 +160,10 @@ public class forder_manager extends Fragment {
                // path=path.replace("Внутренний общий накопитель","/storage/emulated/0");
                // path=path.replace(">","/");
                 if (event.getAction()==MotionEvent.ACTION_UP){
-                        getActivity();
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
                         MainActivity ma = (MainActivity) getActivity();
                         ma.myMetod(path_info);
+                    }
                 }
                 return true;
             }

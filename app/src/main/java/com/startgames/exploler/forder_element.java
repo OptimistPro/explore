@@ -1,5 +1,6 @@
 package com.startgames.exploler;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -18,18 +19,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link forder_element#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class forder_element extends Fragment {
+public class forder_element extends Fragment implements forder_file{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +66,7 @@ public class forder_element extends Fragment {
         return fragment;
     }
 
+    public forder_element ts = this;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +76,10 @@ public class forder_element extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
-
+        ts=this;
     }
     String type_file="";
+    boolean vadel_prov = false;
 
     void file_open(String path,String type){
         try {
@@ -89,10 +95,26 @@ public class forder_element extends Fragment {
         }
     }
 
+    public void del_vabor(){
+        View view = getView();
+        ImageView t =view.findViewById(R.id.vadel);
+        t.setImageResource(R.drawable.vabor_forder);
+    }
+
+
+    public void kryg(boolean provs){
+        View view = getView();
+        if(provs){
+            view.findViewById(R.id.vadel).setVisibility(View.VISIBLE);
+        }else{
+            view.findViewById(R.id.vadel).setVisibility(View.INVISIBLE);
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_forder_element, container, false);
+        final View view=inflater.inflate(R.layout.fragment_forder_element, container, false);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -159,71 +181,92 @@ public class forder_element extends Fragment {
 
 
         ImageButton button1 = view.findViewById(R.id.forder_buttom_perexod);
-        View.OnTouchListener st = new View.OnTouchListener(){
-            public boolean onTouch(View view, MotionEvent event)
-            {
+
+
+        button1.setOnLongClickListener(
+                new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                       // Toast.makeText(getActivity(), "Файл уже существует", Toast.LENGTH_SHORT).show();
+                        ImageView iv = view.findViewById(R.id.vadel);
+                        iv.setImageResource(R.drawable.vabor_forder_open);
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.vadel_forders();
+                        ((Global) getActivity().getApplication()).setvadel_forder(true);
+                        ((Global) getActivity().getApplication()).vabor_forder_g(ts);
+                        ((Global) getActivity().getApplication()).del_vse(true);
+                        vadel_prov=true;
+                        return true;
+                    }
+                }
+        );
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String path = "";
                 if (getArguments() != null) {
                     mParam1 = getArguments().getString(ARG_PARAM1);
                     path=mParam1;
                 }
-                if (event.getAction()==MotionEvent.ACTION_UP){
-                    //if (type_file=="apk"||||type_file=="xml") {
-                    if (type_file.equals("pdf")) {
-                        file_open(path,"application/pdf");
+                    if (!((Global) getActivity().getApplication()).getMenu_close()&&!((Global) getActivity().getApplication()).getvadel_forder()) {
+
+                        if (type_file.equals("pdf")) {
+                            file_open(path, "application/pdf");
+                        } else if (type_file.equals("txt")) {
+                            file_open(path, "text/plain");
+                        } else if (type_file.equals("docx")) {
+                            file_open(path, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+                        } else if (type_file.equals("doc")) {
+                            file_open(path, "application/msword");
+                        } else if (type_file.equals("pptx")) {
+                            file_open(path, "application/vnd.openxmlformats-officedocument.presentationml.presentation");
+                        } else if (type_file.equals("ppt")) {
+                            file_open(path, "application/vnd.ms-powerpoint");
+                        } else if (type_file.equals("xls")) {
+                            file_open(path, "application/vnd.ms-excel");
+                        } else if (type_file.equals("xlsx")) {
+                            file_open(path, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                        } else if (type_file.equals("zip")) {
+                            file_open(path, "application/zip");
+                        } else if (type_file.equals("apk")) {
+                            file_open(path, "application/vnd.android.package-archive");
+                        } else if (type_file.equals("png") || type_file.equals("jpg")) {
+                            //file_open(path, "image/*");
+                            MainActivity ma = (MainActivity) getActivity();
+                            ma.image_pressed(mParam1,mParam2);
+                        } else if (type_file.equals("mp3")) {
+                            file_open(path, "audio/*");
+                        } else if (type_file.equals("mp4")) {
+                            file_open(path, "video/*");
+                        } else if (type_file.equals("none")) {
+                            file_open(path, "application/*");
+                        } else {
+
+                            MainActivity ma = (MainActivity) getActivity();
+                            ma.myMetod(path);
+                        }
+                }else if (((Global) getActivity().getApplication()).getvadel_forder()){
+
+                        if (vadel_prov){
+                            ((Global) getActivity().getApplication()).vabor_forder_del(ts);
+                            del_vabor();
+                            vadel_prov = false;
+                            MainActivity ma = (MainActivity) getActivity();
+                            ma.vadel_forders();
+                        }
+                        else {
+                            ImageView iv = view.findViewById(R.id.vadel);
+                            iv.setImageResource(R.drawable.vabor_forder_open);
+                            MainActivity ma = (MainActivity) getActivity();
+                            ma.vadel_forders();
+                            ((Global) getActivity().getApplication()).setvadel_forder(true);
+                            ((Global) getActivity().getApplication()).vabor_forder_g(ts);
+                            vadel_prov = true;
+                        }
                     }
-                    else if (type_file.equals("txt")) {
-                        file_open(path,"text/plain");
-                    }
-                    else if (type_file.equals("docx")) {
-                        file_open(path,"application/vnd.openxmlformats-officedocument.wordprocessingml.document");
-                    }
-                    else if (type_file.equals("doc")) {
-                        file_open(path,"application/msword");
-                    }
-                    else if (type_file.equals("pptx")) {
-                        file_open(path,"application/vnd.openxmlformats-officedocument.presentationml.presentation");
-                    }
-                    else if (type_file.equals("ppt")) {
-                        file_open(path,"application/vnd.ms-powerpoint");
-                    }
-                    else if (type_file.equals("xls")) {
-                        file_open(path,"application/vnd.ms-excel");
-                    }
-                    else if (type_file.equals("xlsx")) {
-                        file_open(path,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-                    }
-                    else if (type_file.equals("zip")) {
-                        file_open(path,"application/zip");
-                    }
-                    else if (type_file.equals("apk")) {
-                        file_open(path,"application/vnd.android.package-archive");
-                    }
-                    else if (type_file.equals("png")||type_file.equals("jpg")) {
-                        file_open(path,"image/*");
-                    }
-                    else if (type_file.equals("mp3")) {
-                        file_open(path,"audio/*");
-                    }
-                    else if (type_file.equals("mp4")) {
-                        file_open(path,"video/*");
-                    }
-                    else if (type_file.equals("none")) {
-                        file_open(path,"application/*");
-                    }
-                    else {
-                        getActivity();
-                        MainActivity ma = (MainActivity) getActivity();
-                        ma.myMetod(path);
-                    }
-                }
-                return true;
             }
-
-        };
-        button1.setOnTouchListener(st);
-
-
+        });
 
 
         return view;
