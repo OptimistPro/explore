@@ -24,7 +24,7 @@
                 android:background="#F8F8F8">
 
                 <ImageButton
-                    android:id="@+id/imageButton8"
+                    android:id="@+id/image_time_buttom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -35,31 +35,31 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton9"
+                    android:id="@+id/video_buttom_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/icon_2"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+                    app:layout_constraintEnd_toStartOf="@+id/document_buttom_time"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton8"
+                    app:layout_constraintStart_toEndOf="@+id/image_time_buttom"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton10"
+                    android:id="@+id/document_buttom_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/icon_3"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton11"
+                    app:layout_constraintEnd_toStartOf="@+id/myzik_buttom_time"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton9"
+                    app:layout_constraintStart_toEndOf="@+id/video_buttom_time"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton11"
+                    android:id="@+id/myzik_buttom_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -70,7 +70,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton12"
+                    android:id="@+id/apk_buttom_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -81,19 +81,19 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
                 <ImageButton
-                    android:id="@+id/imageButton13"
+                    android:id="@+id/dowload_forder_buttom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/icon_6"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton14"
+                    app:layout_constraintEnd_toStartOf="@+id/zip_bottum_time"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton12"
+                    app:layout_constraintStart_toEndOf="@+id/apk_buttom_time"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
                 <ImageButton
-                    android:id="@+id/imageButton14"
+                    android:id="@+id/zip_bottum_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
@@ -101,7 +101,7 @@
                     android:src="@drawable/icon_7"
                     app:layout_constraintEnd_toStartOf="@+id/imageButton15"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton13"
+                    app:layout_constraintStart_toEndOf="@+id/dowload_forder_buttom"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                 <ImageButton
@@ -124,7 +124,7 @@
                     android:textAlignment="center"
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+                    app:layout_constraintTop_toBottomOf="@+id/image_time_buttom" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -136,7 +136,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/textView6"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton9" />
+                    app:layout_constraintTop_toBottomOf="@+id/video_buttom_time" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -148,7 +148,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/textView7"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView5"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+                    app:layout_constraintTop_toBottomOf="@+id/document_buttom_time" />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -159,7 +159,7 @@
                     android:textAlignment="center"
                     android:textColor="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton11" />
+                    app:layout_constraintTop_toBottomOf="@+id/myzik_buttom_time" />
 
                 <TextView
                     android:id="@+id/textView12"
@@ -170,7 +170,7 @@
                     android:textAlignment="center"
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton12" />
+                    app:layout_constraintTop_toBottomOf="@+id/apk_buttom_time" />
 
                 <TextView
                     android:id="@+id/textView15"
@@ -182,7 +182,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/textView14"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView12"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton13" />
+                    app:layout_constraintTop_toBottomOf="@+id/dowload_forder_buttom" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -194,7 +194,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/textView13"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton14" />
+                    app:layout_constraintTop_toBottomOf="@+id/zip_bottum_time" />
 
                 <TextView
                     android:id="@+id/textView13"

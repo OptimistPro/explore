@@ -44,6 +44,9 @@ public class Global extends Application {
         //obj.del_vabor();
         vabor_forder.add(obj);
     }
+    public String name_object_vadel(){
+        return vabor_forder.get(0).name_file;
+    }
     public void vabor_forder_del(forder_element obj){
         //obj.del_vabor();
         vabor_forder.remove(obj);
@@ -52,14 +55,28 @@ public class Global extends Application {
     public void del_vabors(){
         for (int i = 0;i<vabor_forder.size();i++){
             vabor_forder.get(i).del_vabor();
-            vadel_forder=false;
         }
+        vadel_forder=false;
         vabor_forder.clear();
     }
     public int vabor_size(){
         return vabor_forder.size();
     }
+    public void del_vabors_object(){
+        for (int i = 0;i<vabor_forder.size();i++){
+            vabor_forder.get(i).del_object();
+        }
+        del_vabors();
+        del_vse(false);
+    }
 
+    public void rename_vabors_object(String name){
+        for (int i = 0;i<vabor_forder.size();i++){
+            vabor_forder.get(i).rename_object(name);
+        }
+        del_vabors();
+        del_vse(false);
+    }
 
     public ArrayList<forder_element> vse_forder=new ArrayList<>();
     public void vse_forder_g(forder_element obj){

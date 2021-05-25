@@ -3,10 +3,13 @@ package com.startgames.exploler;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,119 @@ public class time_layout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_time_layout, container, false);
+        View view =inflater.inflate(R.layout.fragment_time_layout, container, false);
+        ImageButton button2 = view.findViewById(R.id.dowload_forder_buttom);
+        View.OnTouchListener st2 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.myMetod("/storage/emulated/0/Download/");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button2.setOnTouchListener(st2);
+
+        ImageButton button3 = view.findViewById(R.id.image_time_buttom);
+        View.OnTouchListener st3 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("image");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button3.setOnTouchListener(st3);
+
+        ImageButton button8 = view.findViewById(R.id.zip_bottum_time);
+        View.OnTouchListener st8 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("zip");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button8.setOnTouchListener(st8);
+
+        ImageButton button4 = view.findViewById(R.id.video_buttom_time);
+        View.OnTouchListener st4 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("video");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button4.setOnTouchListener(st4);
+
+        ImageButton button5 = view.findViewById(R.id.document_buttom_time);
+        View.OnTouchListener st5 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("document");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button5.setOnTouchListener(st5);
+
+        ImageButton button6 = view.findViewById(R.id.myzik_buttom_time);
+        View.OnTouchListener st6 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("myzik");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button6.setOnTouchListener(st6);
+
+        ImageButton button7 = view.findViewById(R.id.apk_buttom_time);
+        View.OnTouchListener st7 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getActivity().getApplication()).getMenu_close()) {
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.image_time_pressed("apk");
+                    }
+                }
+                return true;
+            }
+
+        };
+        button7.setOnTouchListener(st7);
+
+        return view;
     }
 }

@@ -1867,6 +1867,7 @@ id all
 id always
 id animateToEnd
 id animateToStart
+id apk_buttom_time
 id asConfigured
 id async
 id auto
@@ -1906,6 +1907,7 @@ id clip_horizontal
 id clip_vertical
 id close_buttom
 id close_control_panel
+id close_forder_time
 id col_vabor
 id collapseActionView
 id confirm_button
@@ -1924,6 +1926,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete_buttom
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -1937,6 +1940,8 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id document_buttom_time
+id dowload_forder_buttom
 id dragDown
 id dragEnd
 id dragLeft
@@ -1971,6 +1976,7 @@ id forder
 id forder_block
 id forder_buttom
 id forder_buttom_perexod
+id forder_time
 id forever
 id foto_block
 id foto_name
@@ -1997,28 +2003,20 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton10
-id imageButton11
-id imageButton12
-id imageButton13
-id imageButton14
 id imageButton15
 id imageButton2
-id imageButton3
 id imageButton34
 id imageButton35
 id imageButton36
 id imageButton4
-id imageButton5
 id imageButton6
 id imageButton7
-id imageButton8
-id imageButton9
 id imageView
 id imageView2
 id imageView21
 id imageView22
 id imageView23
+id image_time_buttom
 id images_smotr
 id info
 id info_panel_fragment
@@ -2076,7 +2074,9 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiPage
 id multiply
+id myzik_buttom_time
 id name_forder
+id name_razdel
 id name_slot
 id navigation_header_container
 id never
@@ -2116,6 +2116,7 @@ id prosent_slot
 id radio
 id ratio
 id rectangles
+id rename_buttom
 id reverseSawtooth
 id right
 id right_icon
@@ -2243,6 +2244,7 @@ id textinput_prefix_text
 id textinput_suffix_text
 id time
 id time_buttom
+id time_forder_file
 id title
 id titleDividerNoCustom
 id title_template
@@ -2270,6 +2272,7 @@ id useLogo
 id vadel
 id vertical
 id verx_panel_c
+id video_buttom_time
 id view_offset_helper
 id visible
 id wearable_support_confirmation_overlay_image
@@ -2313,6 +2316,7 @@ id ws_navigation_drawer_item_text
 id ws_navigation_drawer_page_indicator
 id ws_navigation_drawer_view_pager
 id zero_corner_chip
+id zip_bottum_time
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -2394,10 +2398,12 @@ layout fragment_control_forder_file
 layout fragment_errol_forder
 layout fragment_forder_element
 layout fragment_forder_manager
+layout fragment_forder_manager_time
 layout fragment_foto_smotr
 layout fragment_info_forder
 layout fragment_info_slot
 layout fragment_setting
+layout fragment_time_forder_list
 layout fragment_time_layout
 layout fragment_toolbar
 layout mtrl_alert_dialog

@@ -11,7 +11,7 @@
         android:layout_width="331dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="Новый файл"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

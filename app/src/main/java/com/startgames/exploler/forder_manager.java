@@ -114,7 +114,7 @@ public class forder_manager extends Fragment {
             for (int i = 0; i < files.length; i++) {
 
                 if (files[i].getName().charAt(0)!='.') {
-                    if (files[i].getName().indexOf('.')<=0){
+                    if (files[i].isDirectory()){
                         forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
                         ft.add(R.id.forder, catFragment);
                         prov=false;
@@ -125,7 +125,7 @@ public class forder_manager extends Fragment {
             for (int i = 0; i < files.length; i++) {
 
                 if (files[i].getName().charAt(0)!='.') {
-                    if (files[i].getName().indexOf('.')>0){
+                    if (files[i].isFile()){
                         forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
                         ft.add(R.id.forder, catFragment);
                         prov=false;

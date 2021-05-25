@@ -67,6 +67,7 @@ public class forder_element extends Fragment implements forder_file{
     }
 
     public forder_element ts = this;
+    public String name_file="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,9 +78,12 @@ public class forder_element extends Fragment implements forder_file{
 
         }
         ts=this;
+        name_file=mParam2;
     }
     String type_file="";
     boolean vadel_prov = false;
+
+
 
     void file_open(String path,String type){
         try {
@@ -111,6 +115,22 @@ public class forder_element extends Fragment implements forder_file{
         }
     }
 
+    public void del_object(){
+        File file = new File(mParam1);
+        file.delete();
+    }
+
+    public void rename_object(String name){
+        MainActivity ma = (MainActivity) getActivity();
+        String pt = ma.get_real_forder();
+        File file = new File(mParam1);
+        if (file.isFile()) {
+            file.renameTo(new File(pt, name));
+        }else{
+            file.renameTo(new File(pt+File.separator+name));
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -121,59 +141,53 @@ public class forder_element extends Fragment implements forder_file{
             mParam2 = getArguments().getString(ARG_PARAM2);
             TextView names = view.findViewById(R.id.name_forder);
             names.setText(mParam2);
-            String[] st2 = mParam2.split("\\.");
-            if (st2.length>1) {
-                type_file = st2[st2.length - 1];
-                ImageButton but = view.findViewById(R.id.forder_buttom_perexod);
-                if (type_file.equals("mp3")) {
-                    but.setImageResource(R.drawable.muzik_buttom);
-                }
-                else if (type_file.equals("MP3")) {
-                    type_file="mp3";
-                    but.setImageResource(R.drawable.muzik_buttom);
-                }
-                else if (type_file.equals("mp4")) {
-                    but.setImageResource(R.drawable.video_buttom);
-                }
-                else if (type_file.equals("xlsx")) {
-                    but.setImageResource(R.drawable.xslx_buttom);
-                }
-                else if (type_file.equals("xls")) {
-                    but.setImageResource(R.drawable.xslx_buttom);
-                }
-                else if (type_file.equals("ppt")) {
-                    but.setImageResource(R.drawable.ppt_buttom);
-                }
-                else if (type_file.equals("pptx")) {
-                    but.setImageResource(R.drawable.ppt_buttom);
-                }
-                else if (type_file.equals("doc")) {
-                    but.setImageResource(R.drawable.docx_file);
-                }
-                else if (type_file.equals("apk")) {
-                    but.setImageResource(R.drawable.file_apk_buttom);
-                }
-                else if (type_file.equals("txt")) {
-                    but.setImageResource(R.drawable.file_txt_buttom);
-                }
-                else if (type_file.equals("xml")) {
-                    but.setImageResource(R.drawable.file_xml_buttom);
-                }
-                else if (type_file.equals("png")||type_file.equals("jpg")) {
-                    //but.setImageResource(R.drawable.file_txt_buttom);
-                    //but.setImageURI(Uri.parse(mParam1));
-                    but.setImageDrawable(Drawable.createFromPath(mParam1));
-                }
-                else if (type_file.equals("pdf")) {
-                    but.setImageResource(R.drawable.pdf_file);
-                }
-                else if (type_file.equals("docx")) {
-                    but.setImageResource(R.drawable.docx_file);
-                }
-                else if (type_file.equals("zip")) {
-                    but.setImageResource(R.drawable.zip_file);
+            File file = new File(mParam1);
+            if (file.isFile()) {
+                String[] st2 = mParam2.split("\\.");
+                if (st2.length > 1) {
+                    type_file = st2[st2.length - 1];
+                    ImageButton but = view.findViewById(R.id.forder_buttom_perexod);
+                    if (type_file.equals("mp3")) {
+                        but.setImageResource(R.drawable.muzik_buttom);
+                    } else if (type_file.equals("MP3")) {
+                        type_file = "mp3";
+                        but.setImageResource(R.drawable.muzik_buttom);
+                    } else if (type_file.equals("mp4")||type_file.equals("MP4")) {
+                        type_file = "mp4";
+                        but.setImageResource(R.drawable.video_buttom);
+                    } else if (type_file.equals("xlsx")) {
+                        but.setImageResource(R.drawable.xslx_buttom);
+                    } else if (type_file.equals("xls")) {
+                        but.setImageResource(R.drawable.xslx_buttom);
+                    } else if (type_file.equals("ppt")) {
+                        but.setImageResource(R.drawable.ppt_buttom);
+                    } else if (type_file.equals("pptx")) {
+                        but.setImageResource(R.drawable.ppt_buttom);
+                    } else if (type_file.equals("doc")) {
+                        but.setImageResource(R.drawable.docx_file);
+                    } else if (type_file.equals("apk")) {
+                        but.setImageResource(R.drawable.file_apk_buttom);
+                    } else if (type_file.equals("txt")) {
+                        but.setImageResource(R.drawable.file_txt_buttom);
+                    } else if (type_file.equals("xml")) {
+                        but.setImageResource(R.drawable.file_xml_buttom);
+                    } else if (type_file.equals("png") || type_file.equals("jpg")) {
+                        //but.setImageResource(R.drawable.file_txt_buttom);
+                        //but.setImageURI(Uri.parse(mParam1));
+                        but.setImageDrawable(Drawable.createFromPath(mParam1));
+                    } else if (type_file.equals("pdf")) {
+                        but.setImageResource(R.drawable.pdf_file);
+                    } else if (type_file.equals("docx")) {
+                        but.setImageResource(R.drawable.docx_file);
+                    } else if (type_file.equals("zip")) {
+                        but.setImageResource(R.drawable.zip_file);
+                    } else {
+                        type_file = "none";
+                        but.setImageResource(R.drawable.file_buttom);
+                    }
                 }else{
-                    type_file="none";
+                    ImageButton but = view.findViewById(R.id.forder_buttom_perexod);
+                    type_file = "none";
                     but.setImageResource(R.drawable.file_buttom);
                 }
             }
@@ -258,11 +272,11 @@ public class forder_element extends Fragment implements forder_file{
                         else {
                             ImageView iv = view.findViewById(R.id.vadel);
                             iv.setImageResource(R.drawable.vabor_forder_open);
-                            MainActivity ma = (MainActivity) getActivity();
-                            ma.vadel_forders();
                             ((Global) getActivity().getApplication()).setvadel_forder(true);
                             ((Global) getActivity().getApplication()).vabor_forder_g(ts);
                             vadel_prov = true;
+                            MainActivity ma = (MainActivity) getActivity();
+                            ma.vadel_forders();
                         }
                     }
             }

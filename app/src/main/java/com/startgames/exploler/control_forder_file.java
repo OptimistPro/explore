@@ -1,7 +1,10 @@
 package com.startgames.exploler;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -9,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -58,7 +62,9 @@ public class control_forder_file extends Fragment implements control_forder_inte
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    void del(){
+    public void del(){
+        MainActivity ma = (MainActivity) getActivity();
+        ma.del_control_forder();
         getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 
@@ -66,7 +72,7 @@ public class control_forder_file extends Fragment implements control_forder_inte
         View view =getView();
         TextView t = view.findViewById(R.id.col_vabor);
         int g = ((Global) getActivity().getApplication()).vabor_size();
-        t.setText("Выбрано:"+String.valueOf(g+1));
+        t.setText("Выбрано:"+String.valueOf(g));
     }
 
     @Override
@@ -89,6 +95,79 @@ public class control_forder_file extends Fragment implements control_forder_inte
 
         };
         button4.setOnTouchListener(st4);
+
+        ImageButton button = view.findViewById(R.id.delete_buttom);
+        View.OnTouchListener st = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (((Global) getActivity().getApplication()).vabor_size()>=1) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        //View views = (ConstraintLayout) getLayoutInflater().inflate(R.layout.new_file,null);
+                        //final EditText namekey= (EditText) view.findViewById(R.id.text_new_forder);
+                        builder.setMessage("Вы действительно хотите удалить файлы")
+                                //.setTitle("Новый файл")
+                                //.setView(view)
+                                .setPositiveButton("ок", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((Global) getActivity().getApplication()).del_vabors_object();
+                                        MainActivity ma = (MainActivity) getActivity();
+                                        ma.update_forder();
+                                        del();
+                                    }
+                                })
+                                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        builder.show();
+                    }
+                }
+                return true;
+            }
+
+        };
+        button.setOnTouchListener(st);
+
+        ImageButton button2 = view.findViewById(R.id.rename_buttom);
+        View.OnTouchListener st2 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (((Global) getActivity().getApplication()).vabor_size()==1) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        View views = (ConstraintLayout) getLayoutInflater().inflate(R.layout.new_file, null);
+                        final EditText namekey = (EditText) views.findViewById(R.id.text_new_forder);
+                        namekey.setText(((Global) getActivity().getApplication()).name_object_vadel());
+                        builder.setMessage("Введите новое название файла")
+                                .setTitle("Переименование файла")
+                                .setView(views)
+                                .setPositiveButton("ок", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((Global) getActivity().getApplication()).rename_vabors_object(namekey.getText().toString());
+                                        MainActivity ma = (MainActivity) getActivity();
+                                        ma.update_forder();
+                                        del();
+                                    }
+                                })
+                                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        builder.show();
+                    }
+                }
+                return true;
+            }
+
+        };
+        button2.setOnTouchListener(st2);
         return view;
     }
 }

@@ -15,10 +15,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.Cursor;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -34,6 +36,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -230,20 +234,140 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         builder.show();
-
     }
 
     public void vadel_forders(){
-        if (((Global) getApplication()).vabor_size()<=0){
+        if (((Global) getApplication()).vabor_size()==0&&listener_contr==null){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         control_forder_file catFragment = control_forder_file.newInstance("","");
         ft.add(R.id.control_forder, catFragment);
         this.listener_contr=catFragment;
         ft.commit();
-        }else{
+        }
+        else{
             listener_contr.update();
         }
 
+    }
+
+    public void seach_element(ArrayList<String> res,String path,String type){
+        File directory = new File(path);
+        File[] files = directory.listFiles();
+        for (int i =0;i<files.length;i++){
+            if (files[i].isDirectory()){
+                seach_element(res,files[i].getPath(),type);
+            }else{
+                    String[] st2 = files[i].getName().split("\\.");
+                    if (st2.length > 1) {
+                        String type_file = st2[st2.length - 1];
+                        if (type.equals("image")) {
+                             if (type_file.equals("png") || type_file.equals("jpg")) {
+                                  res.add(files[i].getPath());
+                             }
+                         }
+                        if (type.equals("video")) {
+                            if (type_file.equals("mp4") || type_file.equals("MP4")) {
+                                res.add(files[i].getPath());
+                            }
+                        }
+                        if (type.equals("document")) {
+                            if (type_file.equals("pdf") || type_file.equals("txt")|| type_file.equals("xlsx")|| type_file.equals("xls")|| type_file.equals("ppt")|| type_file.equals("pptx")|| type_file.equals("doc")|| type_file.equals("docx")) {
+                                res.add(files[i].getPath());
+                            }
+                        }
+                        if (type.equals("myzik")) {
+                            if (type_file.equals("mp3")||type_file.equals("MP3")) {
+                                res.add(files[i].getPath());
+                            }
+                        }
+                        if (type.equals("apk")) {
+                            if (type_file.equals("apk")) {
+                                res.add(files[i].getPath());
+                            }
+                        }
+                        if (type.equals("zip")) {
+                            if (type_file.equals("zip")) {
+                                res.add(files[i].getPath());
+                            }
+                        }
+                }
+            }
+        }
+    }
+
+
+    public ArrayList<String> seach_file(String type){
+        ArrayList<String> res=new ArrayList<String>(0);
+
+        String start_path = "/storage/emulated/0";
+
+        seach_element(res,start_path,type);
+
+
+        return res;
+    }
+
+
+
+    public void image_time_pressed(String type){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        ArrayList<String> result = seach_file(type);
+
+        String name_r="";
+        if (type.equals("image")){
+            name_r="Изображения";
+        }
+        if (type.equals("video")){
+            name_r="Видео";
+        }
+        if (type.equals("document")){
+            name_r="Документы";
+        }
+        if (type.equals("myzik")){
+            name_r="Музыка";
+        }
+        if (type.equals("apk")){
+            name_r="APK файлы";
+        }
+        if (type.equals("zip")){
+            name_r="Архивы";
+        }
+        forder_manager_time catFragment = forder_manager_time.newInstance(name_r,result);
+        ft.add(R.id.time_forder_file, catFragment);
+        //this.listener=catFragment;
+        ft.commit();
+        findViewById(R.id.time_forder_file).setLeft(0);
+        findViewById(R.id.time_forder_file).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.open_setting));
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                findViewById(R.id.liner).setLeft(2000);
+                ((Global) getApplication()).setimages_close(true);
+            }
+        }, 300);
+    }
+
+    public void image_time_close(){
+        findViewById(R.id.time_forder_file).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.close_setting));
+        findViewById(R.id.liner).setLeft(0);
+        findViewById(R.id.liner).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.toolbaropen));
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                //findViewById(R.id.setting_block).setVisibility(View.INVISIBLE);
+                //((Global) getApplication()).setMenu_close(false);
+                findViewById(R.id.time_forder_file).setLeft(2000);
+            }
+        }, 300);
+    }
+
+    public void del_control_forder(){
+        this.listener_contr=null;
+    }
+
+    public void update_forder(){
+        myMetod(path_obj);
     }
 
     @Override
@@ -253,6 +377,10 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(((Global) this.getApplication()).getimages_close()){
             image_close();
+        } if(((Global) getApplication()).getvadel_forder()){
+            ((Global) getApplication()).del_vabors();
+            ((Global) getApplication()).del_vse(false);
+            listener_contr.del();
         }
         else{
             myMetod(path_back);
@@ -298,7 +426,9 @@ public class MainActivity extends AppCompatActivity {
     }
     //////////////////////////////////////////
 
-
+    public String get_real_forder(){
+        return path_obj;
+    }
 
 
 
