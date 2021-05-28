@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link time_layout#newInstance} factory method to
@@ -63,6 +66,43 @@ public class time_layout extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_time_layout, container, false);
+
+        ArrayList<String> forderTime = ((Global) getActivity().getApplication()).getForder_memory();
+        ArrayList<String> docTime = ((Global) getActivity().getApplication()).getDoc_memory();
+        ArrayList<String> imagesTime = ((Global) getActivity().getApplication()).getImages_memory();
+        ArrayList<String> audioTime = ((Global) getActivity().getApplication()).getAudio_memory();
+        ArrayList<String> videoTime = ((Global) getActivity().getApplication()).getVideo_memory();
+        ArrayList<String> apkTime = ((Global) getActivity().getApplication()).getApk_memory();
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+        if (forderTime.size()>0){
+            SlotTimeForder catFragment = SlotTimeForder.newInstance("Папки", forderTime);
+            ft.add(R.id.timeBlockList, catFragment);
+        }
+        if (docTime.size()>0){
+            SlotTimeForder catFragment2 = SlotTimeForder.newInstance("Документы", docTime);
+            ft.add(R.id.timeBlockList, catFragment2);
+        }
+        if (imagesTime.size()>0){
+            SlotTimeForder catFragment = SlotTimeForder.newInstance("Изображения", imagesTime);
+            ft.add(R.id.timeBlockList, catFragment);
+        }
+        if (audioTime.size()>0){
+            SlotTimeForder catFragment = SlotTimeForder.newInstance("Музыка", audioTime);
+            ft.add(R.id.timeBlockList, catFragment);
+        }
+        if (videoTime.size()>0){
+            SlotTimeForder catFragment = SlotTimeForder.newInstance("Видео", videoTime);
+            ft.add(R.id.timeBlockList, catFragment);
+        }
+        if (apkTime.size()>0){
+            SlotTimeForder catFragment = SlotTimeForder.newInstance("APK файлы", apkTime);
+            ft.add(R.id.timeBlockList, catFragment);
+        }
+        ft.commit();
+
+
         ImageButton button2 = view.findViewById(R.id.dowload_forder_buttom);
         View.OnTouchListener st2 = new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event)

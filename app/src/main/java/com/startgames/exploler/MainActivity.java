@@ -8,11 +8,13 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
@@ -20,6 +22,7 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
@@ -38,9 +41,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,8 +61,86 @@ public class MainActivity extends AppCompatActivity {
     private imega_view_smotr listener;
     private control_forder_interfeis listener_contr;
 
+
+    public void save_db(){
+        SharedPreferences myPreaf = getSharedPreferences("DB", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor dbWrite = myPreaf.edit();
+        ArrayList<String> g =((Global) getApplication()).getImages_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("img"+i,g.get(i));
+        }
+        dbWrite.putInt("img_s",g.size());
+
+
+        g =((Global) getApplication()).getDoc_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("doc"+i,g.get(i));
+        }
+        dbWrite.putInt("doc_s",g.size());
+
+        g =((Global) getApplication()).getApk_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("apk"+i,g.get(i));
+        }
+        dbWrite.putInt("apk_s",g.size());
+
+        g =((Global) getApplication()).getVideo_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("video"+i,g.get(i));
+        }
+        dbWrite.putInt("video_s",g.size());
+
+        g =((Global) getApplication()).getAudio_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("audio"+i,g.get(i));
+        }
+        dbWrite.putInt("audio_s",g.size());
+
+        g =((Global) getApplication()).getForder_memory();
+        for (int i = 0;i<g.size();i++){
+            dbWrite.putString("forder"+i,g.get(i));
+        }
+        dbWrite.putInt("forder_s",g.size());
+        dbWrite.commit();
+    }
+
+    public void load_db(){
+        SharedPreferences myPreaf = getSharedPreferences("DB", Activity.MODE_PRIVATE);
+        for (int i = 0;i<myPreaf.getInt("img_s",0);i++){
+            ((Global) getApplication()).add_images_memory(myPreaf.getString("img"+i,""));
+        }
+
+        for (int i = 0;i<myPreaf.getInt("doc_s",0);i++){
+            ((Global) getApplication()).add_doc_memory(myPreaf.getString("doc"+i,""));
+        }
+
+        for (int i = 0;i<myPreaf.getInt("apk_s",0);i++){
+            ((Global) getApplication()).add_apk_memory(myPreaf.getString("apk"+i,""));
+        }
+
+        for (int i = 0;i<myPreaf.getInt("video_s",0);i++){
+            ((Global) getApplication()).add_video_memory(myPreaf.getString("video"+i,""));
+        }
+
+        for (int i = 0;i<myPreaf.getInt("audio_s",0);i++){
+            ((Global) getApplication()).add_audio_memory(myPreaf.getString("audio"+i,""));
+        }
+
+        for (int i = 0;i<myPreaf.getInt("forder_s",0);i++){
+            ((Global) getApplication()).add_forder_memory(myPreaf.getString("forder"+i,""));
+        }
+
+    }
+
+    private  boolean start = false;
     public  void myMetod(String path){
         path_obj=path;
+        if (start) {
+            save_db();
+        }
+        else{
+            start=true;
+        }
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         forder_manager catFragment = forder_manager.newInstance(path);
         ft.replace(R.id.block_layout, catFragment);
@@ -362,6 +447,48 @@ public class MainActivity extends AppCompatActivity {
         }, 300);
     }
 
+
+    public void seach_start(String name,String type){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        SeachFile catFragment = SeachFile.newInstance(name,type);
+        ft.replace(R.id.seach_fraim, catFragment);
+        ft.commit();
+    }
+
+
+    public void seach_pressed(String name,String type){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        SeachFile catFragment = SeachFile.newInstance(name,type);
+        ft.add(R.id.seach_fraim, catFragment);
+        //this.listener=catFragment;
+        ft.commit();
+        findViewById(R.id.seach_fraim).setLeft(0);
+        findViewById(R.id.seach_fraim).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.open_setting));
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                findViewById(R.id.liner).setLeft(2000);
+                ((Global) getApplication()).setimages_close(true);
+            }
+        }, 300);
+    }
+
+    public void seach_close(){
+        findViewById(R.id.seach_fraim).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.close_setting));
+        findViewById(R.id.liner).setLeft(0);
+        findViewById(R.id.liner).startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.toolbaropen));
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                //findViewById(R.id.setting_block).setVisibility(View.INVISIBLE);
+                //((Global) getApplication()).setMenu_close(false);
+                findViewById(R.id.seach_fraim).setLeft(2000);
+            }
+        }, 300);
+    }
+
+
     public void del_control_forder(){
         this.listener_contr=null;
     }
@@ -441,7 +568,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         showPhoneStatePermission();
 
-
+        //if (!start) {
+            load_db();
+        //}
 
         //((Global) this.getApplication()).setSomeVariable("foo"); // записать
         //String s = ((Global) this.getApplication()).getSomeVariable(); //запросить
@@ -539,5 +668,21 @@ public class MainActivity extends AppCompatActivity {
 
         };
         button4.setOnTouchListener(st4);
+
+        ImageButton button8 = findViewById(R.id.seach_buttom);
+        View.OnTouchListener st8 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (!((Global) getApplication()).getMenu_close()) {
+                        String ty= ((Global) getApplication()).getPath_reals();;
+                        seach_pressed("",ty);
+                    }
+                }
+                return true;
+            }
+
+        };
+        button8.setOnTouchListener(st8);
     }
 }

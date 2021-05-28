@@ -45,40 +45,39 @@
 25-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:17:9-41
 26        android:supportsRtl="true"
 26-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:18:9-35
-27        android:testOnly="true"
-28        android:theme="@style/AppTheme" >
-28-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:19:9-40
-29        <activity android:name="com.startgames.exploler.MainActivity" >
-29-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:21:9-27:20
-29-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:21:19-47
-30            <intent-filter>
-30-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:22:13-26:29
-31                <action android:name="android.intent.action.MAIN" />
-31-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:23:17-69
-31-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:23:25-66
-32
-33                <category android:name="android.intent.category.LAUNCHER" />
-33-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:25:17-77
-33-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:25:27-74
-34            </intent-filter>
-35        </activity>
-36
-37        <provider
-38            android:name="androidx.core.content.FileProvider"
-38-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:30:13-62
-39            android:authorities="com.startgames.exploler.provider"
-39-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:31:13-60
-40            android:exported="false"
-40-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:32:13-37
-41            android:grantUriPermissions="true" >
-41-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:33:13-47
-42            <meta-data
-42-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:34:13-36:58
-43                android:name="android.support.FILE_PROVIDER_PATHS"
-43-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:35:17-67
-44                android:resource="@xml/provider_paths" />
-44-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:36:17-55
-45        </provider>
-46    </application>
-47
-48</manifest>
+27        android:theme="@style/AppTheme" >
+27-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:19:9-40
+28        <activity android:name="com.startgames.exploler.MainActivity" >
+28-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:21:9-27:20
+28-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:21:19-47
+29            <intent-filter>
+29-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:22:13-26:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:23:17-69
+30-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:23:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:25:17-77
+32-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:25:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <provider
+37            android:name="androidx.core.content.FileProvider"
+37-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:30:13-62
+38            android:authorities="com.startgames.exploler.provider"
+38-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:31:13-60
+39            android:exported="false"
+39-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:32:13-37
+40            android:grantUriPermissions="true" >
+40-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:33:13-47
+41            <meta-data
+41-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:34:13-36:58
+42                android:name="android.support.FILE_PROVIDER_PATHS"
+42-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:35:17-67
+43                android:resource="@xml/provider_paths" />
+43-->C:\games\project\exploler\app\src\main\AndroidManifest.xml:36:17-55
+44        </provider>
+45    </application>
+46
+47</manifest>

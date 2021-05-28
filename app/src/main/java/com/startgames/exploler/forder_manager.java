@@ -95,9 +95,12 @@ public class forder_manager extends Fragment {
             path=mParam1;
         }
 
-
-
-        ((Global) getActivity().getApplication()).vse_clear();
+        if (((Global) getActivity().getApplication()).getCopy_view()) {
+            ((Global) getActivity().getApplication()).setPath_cope(path);
+        }else {
+            ((Global) getActivity().getApplication()).setPath_reals(path);
+            ((Global) getActivity().getApplication()).vse_clear();
+        }
 
         TextView t = view.findViewById(R.id.textView2);
         String path_name = path;
@@ -122,14 +125,16 @@ public class forder_manager extends Fragment {
                     }
                 }
             }
-            for (int i = 0; i < files.length; i++) {
+            if (!((Global) getActivity().getApplication()).getCopy_view()) {
+                for (int i = 0; i < files.length; i++) {
 
-                if (files[i].getName().charAt(0)!='.') {
-                    if (files[i].isFile()){
-                        forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
-                        ft.add(R.id.forder, catFragment);
-                        prov=false;
-                        ((Global) getActivity().getApplication()).vse_forder_g(catFragment);
+                    if (files[i].getName().charAt(0) != '.') {
+                        if (files[i].isFile()) {
+                            forder_element catFragment = forder_element.newInstance(files[i].getPath(), files[i].getName());
+                            ft.add(R.id.forder, catFragment);
+                            prov = false;
+                            ((Global) getActivity().getApplication()).vse_forder_g(catFragment);
+                        }
                     }
                 }
             }

@@ -126,6 +126,21 @@ public class toolbar extends Fragment {
 
         };
         button4.setOnTouchListener(st4);
+
+        LinearLayout button5 = view.findViewById(R.id.global_seach);
+        View.OnTouchListener st5 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    MainActivity ma = (MainActivity) getActivity();
+                    ma.tool_bar_no();
+                    ma.seach_pressed("","/storage/emulated/0");
+                }
+                return true;
+            }
+
+        };
+        button5.setOnTouchListener(st5);
         return view;
     }
 }

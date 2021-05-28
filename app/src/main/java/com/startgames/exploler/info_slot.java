@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -67,6 +68,8 @@ public class info_slot extends Fragment {
             t1.setText(mParam1);
             TextView t2 =view.findViewById(R.id.prosent_slot);
             t2.setText(String.valueOf(mParam2)+"%");
+            ProgressBar ty = view.findViewById(R.id.progressBar2);
+            ty.setProgress(mParam2);
         }
         return view;
     }

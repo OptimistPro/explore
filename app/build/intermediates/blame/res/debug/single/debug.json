@@ -8,16 +8,20 @@
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\anim\\fon_alfa_close.xml"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_apk_buttom.png.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_apk_buttom.png"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_time_layout.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_time_layout.xml"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_time_layout.xml.flat",
-        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_time_layout.xml"
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_file_apk_buttom.png.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\file_apk_buttom.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder_audio.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder_audio.xml"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\anim_images_bal_close.xml.flat",
@@ -152,12 +156,20 @@
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\icon_4.png"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder_img.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder_img.xml"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_copy_file_icon.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\copy_file_icon.png"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder_doc.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder_doc.xml"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forder_manager.xml.flat",
@@ -236,6 +248,10 @@
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\anim\\fon_alfa_open.xml"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_seach_file.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_seach_file.xml"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
@@ -288,6 +304,14 @@
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder_video.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder_video.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder_apk.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder_apk.xml"
+    },
+    {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_left_str.png.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\drawable-v24\\left_str.png"
     },
@@ -326,6 +350,10 @@
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
         "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_slot_time_forder.xml.flat",
+        "source": "C:\\games\\project\\exploler\\app\\src\\main\\res\\layout\\fragment_slot_time_forder.xml"
     },
     {
         "merged": "C:\\games\\project\\exploler\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_setting.xml.flat",

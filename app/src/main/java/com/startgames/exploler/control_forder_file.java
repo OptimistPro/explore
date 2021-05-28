@@ -75,6 +75,15 @@ public class control_forder_file extends Fragment implements control_forder_inte
         t.setText("Выбрано:"+String.valueOf(g));
     }
 
+
+    public void cope_panels(){
+        View view = getView();
+        ConstraintLayout ty = view.findViewById(R.id.niz_panel_c);
+        ty.setVisibility(View.INVISIBLE);
+        ConstraintLayout ty2 = view.findViewById(R.id.niz_dapoln);
+        ty2.setVisibility(View.VISIBLE);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,6 +97,9 @@ public class control_forder_file extends Fragment implements control_forder_inte
                 if (event.getAction()==MotionEvent.ACTION_DOWN){
                     ((Global) getActivity().getApplication()).del_vabors();
                     ((Global) getActivity().getApplication()).del_vse(false);
+                    ((Global) getActivity().getApplication()).setCopy_view(false);
+                    MainActivity ma = (MainActivity) getActivity();
+                    ma.myMetod(((Global) getActivity().getApplication()).getPath_reals());
                     del();
                 }
                 return true;
@@ -168,6 +180,64 @@ public class control_forder_file extends Fragment implements control_forder_inte
 
         };
         button2.setOnTouchListener(st2);
+
+
+
+        ImageButton button3 = view.findViewById(R.id.copy_buttom_c);
+        View.OnTouchListener st3 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    if (((Global) getActivity().getApplication()).vabor_size()>=1) {
+                        ((Global) getActivity().getApplication()).setCopy_view(true);
+                        ((Global) getActivity().getApplication()).setvadel_forder(false);
+                        MainActivity ma = (MainActivity) getActivity();
+                        ma.myMetod("/storage/emulated/0");
+                        cope_panels();
+                    }
+                    //del();
+                }
+                return true;
+            }
+
+        };
+        button3.setOnTouchListener(st3);
+
+        ImageButton button5 = view.findViewById(R.id.yes_buttom_cop);
+        View.OnTouchListener st5 = new View.OnTouchListener(){
+            public boolean onTouch(View view, MotionEvent event)
+            {
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Вы уверены, что хотите копировать в эту папку")
+                                .setPositiveButton("ок", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((Global) getActivity().getApplication()).copy_files();
+                                        ((Global) getActivity().getApplication()).del_vabors();
+                                        ((Global) getActivity().getApplication()).del_vse(false);
+                                        ((Global) getActivity().getApplication()).setCopy_view(false);
+                                        MainActivity ma = (MainActivity) getActivity();
+                                        ma.myMetod(((Global) getActivity().getApplication()).getPath_reals());
+                                        del();
+                                    }
+                                })
+                                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        builder.show();
+
+                }
+                return true;
+            }
+
+        };
+        button5.setOnTouchListener(st5);
+
         return view;
     }
 }
